@@ -39,6 +39,9 @@ table.dataTable {
 #example_length{
 
 }
+.container {
+      margin-top: 1em;
+    }
 </style>
 
 </head>
@@ -46,7 +49,7 @@ table.dataTable {
     
 <form action="read.php" method="POST">
   <div class="form-group">
-     <div class="col-sm-12">
+     <div class="container col-sm-12">
       <div id ="list">
       <a class="btn btn-primary" href="./index.php" role="button">Insert Data</a>
       <a class="btn btn-primary" href="./dashboard.php" role="button">Dashboard</a>
@@ -123,7 +126,8 @@ table.dataTable {
                     <td><?php echo $speed ;?></td>
                     <td><?php echo $start ;?></td>
                     <td><?php echo $end ;?></td>
-                    <td><a href=<?echo "uploads/".$file ?>>Download</a></td>
+                    <td><a href="download.php?path=uploads/".$file> Download</a></td>
+                    <!-- <td><a href=<?echo "uploads/".$file ?> Download</a></td> -->
                     <td >
                       <a href="update.php?id=<?php echo $id;?>">Update</a>
                       <a href="delete.php?id=<?php echo $id;?>">Delete</a>

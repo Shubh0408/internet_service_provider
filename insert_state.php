@@ -11,6 +11,7 @@ if(isset($_POST['submit'])){
     /* die; */
     $sql_conn=mysqli_query($conn,$sql_insert);
     // print_r($sql_conn);die;
+    echo '<script>alert("State Added!");</script>';
   }
 ?>
 <html>
@@ -44,24 +45,34 @@ if(isset($_POST['submit'])){
       font-weight: bold;
     }
 
+    #list {
+      display: flex;
+      flex-wrap: wrap;
+      
+    }
+    .btn {
+       margin: 0.2rem;
+       border: 1px solid black; 
+    }
     .btn-primary {
       width: 100%;
     }
   </style>
+
 </head>
 <body>
   <div class="container">
     <h1>Internet Service Provider</h1>
     <div id="list">
-      <a class="btn btn-primary" href="./index.php" role="button">Insert Data</a>
-      <a class="btn btn-primary" href="./read.php" role="button">All Records</a>
-      <a class="btn btn-primary" href="./dashboard.php" role="button">Dashboard</a>
-      <a class="btn btn-primary" href="./insert_city.php" role="button">Add Branch</a>
+      <a class="btn btn-light" href="./index.php" role="button">Insert Data</a>
+      <a class="btn btn-light" href="./read.php" role="button">All Records</a>
+      <a class="btn btn-light" href="./dashboard.php" role="button">Dashboard</a>
+      <a class="btn btn-light" href="./insert_city.php" role="button">Add Branch</a>
     </div>
     <form action="insert_state.php" method="POST" enctype="multipart/form-data">
       <div class="form-group">
         <label for="state_name">State:</label>
-        <input type="text" class="form-control" id="state_name" name="state_name">
+        <input type="text" class="form-control" id="state_name" name="state_name" required>
       </div>
       <input type="submit" name="submit" class="btn btn-primary" value="Submit">
     </form>
